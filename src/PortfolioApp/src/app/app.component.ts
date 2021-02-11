@@ -8,11 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'portfolio-app';
 
-  links = {
-    1: { name: 'About me', route: 'app-about-me' },
-    2: { name: 'Portfolio', route: 'app-portfolio' },
-    3: { name: 'Hobbies', route: 'app-hobbies' }
-  };
+  routes = [{ component: 'Portfolio', route: 'portfolio' },
+    { component: 'About me', route: 'about-me' },
+    { component: 'Hobbies', route: 'hobbies' }]
 
-  activeRoute = this.links[2].route;
+  activeRoute = this.routes[2].route;
 }

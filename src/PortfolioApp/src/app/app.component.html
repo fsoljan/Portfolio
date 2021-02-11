@@ -1,15 +1,15 @@
 
 <nav mat-tab-nav-bar mat-align-tabs="center" [backgroundColor]="background">
-  <a mat-tab-link *ngFor="let item of links | keyvalue"
-     (click)="activeRoute = item.value.route"
-     [active]="activeRoute == item.value.route"> {{item.value.name}} </a>
+  <a mat-tab-link *ngFor="let route of routes"
+     (click)="activeRoute = route.route"
+     [active]="activeRoute == route.route"> {{route.component}} </a>
 </nav>
 
 <div class="narrow">
   <div class="container">
-    <app-hobbies *ngIf="activeRoute == 'app-hobbies'"></app-hobbies>
-    <app-portfolio *ngIf="activeRoute == 'app-portfolio'"></app-portfolio>
-    <app-about-me *ngIf="activeRoute == 'app-about-me'"></app-about-me>
+    <portfolio *ngIf="activeRoute == 'portfolio'"></portfolio>
+    <about-me *ngIf="activeRoute == 'about-me'"></about-me>
+    <hobbies *ngIf="activeRoute == 'hobbies'"></hobbies>
   </div>
 </div>
 
